@@ -10,12 +10,21 @@ class Blog(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, help_text="블로그 사용자")
     category = models.CharField(max_length=30, help_text="블로그 카테고리") 
     content = models.TextField(help_text="블로그 내용")
+    image = models.ImageField(blank=True, null=True, help_text="블로그 이미지")
     view_count = models.IntegerField(default=0, help_text="블로그 조회수")
     like_count = models.IntegerField(default=0, help_text="블로그 추천수")
-    dislike_count = models.IntegerField(default=0, help_text="블로그 비추천수")
     create_date = models.DateField(auto_now_add=True, help_text="블로그 게시물 생성일")
     update_date = models.DateField(auto_now=True, help_text="블로그 게시물 수정일")
 
     def __str__(self):
-        return self.title
+        return '%s - %s' %(self.id, self.title)
+
+
+# image 추가 시 pillow 설치하라고 뜸
+# ERRORS:
+# blog.Blog.image: (fields.E210) Cannot use ImageField because Pillow is not installed.
+#         HINT: Get Pillow at https://pypi.org/project/Pillow/ or run command "python -m pip install Pillow".    
+
+
+
 
