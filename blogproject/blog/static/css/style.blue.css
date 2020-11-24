@@ -13,6 +13,7 @@
 * =====================
 *
 */
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 .text-small {
   font-size: 0.85rem !important;
 }
@@ -1553,7 +1554,7 @@ STYLE SWITCHER FOR DEMO
 .navbar-light .navbar-nav .nav-link {
   color: #000;
   font-weight: 400;
-  font-family: "Abril Fatface", serif;
+  font-family: 'NanumSquare', sans-serif;
   transition: all 0.3s;
 }
 
@@ -1586,7 +1587,7 @@ STYLE SWITCHER FOR DEMO
 }
 
 .navbar-light .dropdown-menu {
-  font-family: "Abril Fatface", serif;
+  font-family: 'NanumSquare', sans-serif;
 }
 
 .navbar-dark .navbar-brand {
@@ -1600,7 +1601,7 @@ STYLE SWITCHER FOR DEMO
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
-  font-family: "Abril Fatface", serif;
+  font-family: 'NanumSquare', sans-serif;
   transition: all 0.3s;
 }
 
@@ -1633,7 +1634,7 @@ STYLE SWITCHER FOR DEMO
 }
 
 .navbar-dark .dropdown-menu {
-  font-family: "Abril Fatface", serif;
+  font-family: 'NanumSquare', sans-serif;
 }
 
 /*
@@ -1642,7 +1643,7 @@ STYLE SWITCHER FOR DEMO
 .btn {
   font-weight: 400;
   border: 1px solid transparent;
-  font-family: "Abril Fatface", serif;
+  font-family: 'NanumSquare', sans-serif;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -2248,7 +2249,7 @@ STYLE SWITCHER FOR DEMO
  * 3. TYPE
  */
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: 'NanumSquare', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -2279,7 +2280,7 @@ h6,
 .h5,
 .h6 {
   margin-bottom: 0.5rem;
-  font-family: "Abril Fatface", serif;
+  font-family: 'NanumSquare', sans-serif;
   font-weight: 400;
   line-height: 1.2;
   color: inherit;

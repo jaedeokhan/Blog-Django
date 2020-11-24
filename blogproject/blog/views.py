@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from blog.models import Blog
+from blog.models import Post
 from django.shortcuts import render
 
 # Create your views here.

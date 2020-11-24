@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Travel | Bootstrap blog</title>
+    <title>django 블로그 프로젝트</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -13,10 +13,9 @@
     <link rel="stylesheet" href="/static/vendor/owl.carousel2/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="/static/vendor/owl.carousel2/assets/owl.theme.default.min.css">
     <!-- Google fonts-->
-    <link rel="stylesheet" href="/static/https://fonts.googleapis.com/css?family=Nunito:300,400&amp;display=swap">
-    <link rel="stylesheet" href="/static/https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap">
+    
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="/static/css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="/static/css/style.blue.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="/static/css/custom.css">
     <!-- Favicon-->
@@ -43,23 +42,19 @@
               <ul class="list-inline mb-0 small">
                 <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-facebook-f"></i></a></li>
                 <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-twitter"></i></a></li>
-                <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-instagram"></i></a></li>
-                <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-linkedin"></i></a></li>
-                <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-youtube"></i></a></li>
-                <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-vimeo-v"></i></a></li>
               </ul>
             </div>
-            <div class="col-lg-4 d-none d-lg-block text-right">
+            <!-- <div class="col-lg-4 d-none d-lg-block text-right">
               <div class="dropdown text-small"><a class="reset-anchor dropdown-toggle" id="destinations" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas mr-2"></i>Destinations</a>
                 <div class="dropdown-menu" aria-labelledby="destinations"><a class="dropdown-item text-small" href="#">France</a><a class="dropdown-item text-small" href="#">Germany</a><a class="dropdown-item text-small" href="#">Spain</a><a class="dropdown-item text-small" href="#">Egypt</a><a class="dropdown-item text-small" href="#">Thailand</a><a class="dropdown-item text-small" href="#">Indonesia</a><a class="dropdown-item text-small" href="#">Maldives</a></div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
       <!-- Navbar 1 -->
       <nav class="navbar navbar-expand-lg navbar-light bg-white py-4">
-        <div class="container text-center"><a class="navbar-brand mx-auto" href="index.html"><img class="mb-2" src="/static/img/logo.svg" alt="" width="140">
+        <div class="container text-center"><a class="navbar-brand mx-auto" href="index.html"><h3>Django 블로그 프로젝트 블로그</h3>
             <p class="text-small text-uppercase text-gray mb-0">Your next pocket travel guide</p></a></div>
       </nav>
       <!-- Navbar 2 -->
@@ -88,20 +83,25 @@
     <!-- Destinations -->
     <section class="pt-5">
       <div class="container">
-        <h1>Featured Destinations</h1>
-        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis aliquid</p>
+        <h1>블로그 목록</h1>
+        <p class="mb-0">내용</p>
       </div>
-      <div class="destinations-slider owl-carousel owl-theme nav-center-custom owl-padding"><a class="destination d-flex align-items-end bg-center bg-cover" href="post.html" style="background: url(/static/img/travel-home-4.jpg)">
+      <div class="destinations-slider owl-carousel owl-theme nav-center-custom owl-padding">
+        <a class="destination d-flex align-items-end bg-center bg-cover" href="post.html" style="background: url(/static/img/travel-home-4.jpg)">
           <div class="destination-inner w-100 text-center text-white index-forward has-transition">
             <p class="small text-uppercase mb-0">Paris</p>
             <h2 class="h3 mb-4">France</h2>
             <div class="btn btn-primary btn-block destination-btn text-white">Discover</div>
-          </div></a><a class="destination d-flex align-items-end bg-center bg-cover" href="post.html" style="background: url(/static/img/travel-home-2.jpg)">
+          </div>
+        </a>
+        <a class="destination d-flex align-items-end bg-center bg-cover" href="post.html" style="background: url(/static/img/travel-home-2.jpg)">
           <div class="destination-inner w-100 text-center text-white index-forward has-transition">
             <p class="small text-uppercase mb-0">Tokyo</p>
             <h2 class="h3 mb-4">Japan</h2>
             <div class="btn btn-primary btn-block destination-btn text-white">Discover</div>
-          </div></a><a class="destination d-flex align-items-end bg-center bg-cover" href="post.html" style="background: url(/static/img/travel-home-3.jpg)">
+          </div>
+        </a>
+        <a class="destination d-flex align-items-end bg-center bg-cover" href="post.html" style="background: url(/static/img/travel-home-3.jpg)">
           <div class="destination-inner w-100 text-center text-white index-forward has-transition">
             <p class="small text-uppercase mb-0">Madrid</p>
             <h2 class="h3 mb-4">Spain</h2>
@@ -141,12 +141,14 @@
             <p class="small text-uppercase mb-0">Malé</p>
             <h2 class="h3 mb-4">Maldives</h2>
             <div class="btn btn-primary btn-block destination-btn text-white">Discover</div>
-          </div></a><a class="destination d-flex align-items-end bg-center bg-cover" href="post.html" style="background: url(/static/img/travel-home-1.jpg)">
+          </div></a>
+          <a class="destination d-flex align-items-end bg-center bg-cover" href="post.html" style="background: url(/static/img/travel-home-1.jpg)">
           <div class="destination-inner w-100 text-center text-white index-forward has-transition">
             <p class="small text-uppercase mb-0">New York</p>
             <h2 class="h3 mb-4">United States</h2>
             <div class="btn btn-primary btn-block destination-btn text-white">Discover</div>
-          </div></a>
+          </div>
+        </a>
       </div>
     </section>
     <!-- Divider Section -->
@@ -242,7 +244,7 @@
       </div>
     </section>
     <!-- Subscribe section -->
-    <section class="py-5">
+    <!-- <section class="py-5">
       <div class="container py-4">
         <div class="row align-items-center">
           <div class="col-lg-6 position-relative py-4"><img class="subscribe-img" src="/static/img/subscribe-img-1.jpg" alt=""><img class="subscribe-img" src="img/subscribe-img-2.jpg" alt=""></div>
@@ -262,9 +264,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- Top categories section -->
-    <section class="py-5 bg-light">
+    <!-- <section class="py-5 bg-light">
       <div class="container py-4">
         <header class="mb-5 text-center">
           <h2>Top categories</h2>
@@ -309,18 +311,7 @@
               <p class="text-muted text-small">6 Destinations</p></a></div>
         </div>
       </div>
-    </section>
-    <!-- Sponsors section-->
-    <section class="py-5">
-      <div class="container py-4">
-        <header class="text-center mb-4">
-          <h2>Our sponsors</h2>
-        </header>
-        <!-- Brands -->
-       <div class="owl-carousel sponsors-slider"><a href="#"><img class="d-block mx-auto my-3 sponsor" src="/static/img/brand-1.svg" alt=""></a><a href="#"><img class="d-block mx-auto my-3 sponsor" src="img/brand-2.svg" alt=""></a><a href="#"><img class="d-block mx-auto my-3 sponsor" src="img/brand-3.svg" alt=""></a><a href="#"><img class="d-block mx-auto my-3 sponsor" src="img/brand-4.svg" alt=""></a><a href="#"><img class="d-block mx-auto my-3 sponsor" src="img/brand-5.svg" alt=""></a><a href="#"><img class="d-block mx-auto my-3 sponsor" src="img/brand-6.svg" alt=""></a>
-        </div>
-      </div>
-    </section>
+    </section> -->
     <footer class="bg-dark py-4">
       <div class="container">
         <div class="row py-2">
@@ -331,10 +322,6 @@
             <ul class="list-inline text-white small mb-0">
               <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-facebook-f"></i></a></li>
               <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-twitter"></i></a></li>
-              <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-instagram"></i></a></li>
-              <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-linkedin"></i></a></li>
-              <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-youtube"></i></a></li>
-              <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-vimeo-v"></i></a></li>
             </ul>
           </div>
           <div class="col-lg-4 text-center text-lg-right">
