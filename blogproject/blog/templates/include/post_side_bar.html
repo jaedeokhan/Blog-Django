@@ -1,0 +1,57 @@
+<div class="col-lg-4">
+    <!-- About me widget -->
+    <div class="mb-5 text-center">
+        <h3 class="h5">총 게시물 : {{ post_total }}</h3>
+    </div>
+    <div class="mb-5 text-center">
+        <h3 class="h5">블로그 카테고리</h3>
+        {% for category in post_category %}
+            <span class="badge">{{ category }}</span>
+        {% endfor %}
+    </div>
+    <div class="mb-5 text-center"><img class="mb-3 rounded-circle img-thumbnail shadow-sm" src="/static/img/author.jpg" alt="" width="110">
+      <h3 class="h4">About me</h3>
+      <p class="text-small text-muted px-sm-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p><img class="d-block mx-auto mb-3" src="/static/img/signature.png" alt="" width="60">
+      <ul class="list-inline text-small mb-0">
+        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-twitter"></i></a></li>
+        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-instagram"></i></a></li>
+        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-linkedin"></i></a></li>
+        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-youtube"></i></a></li>
+        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-vimeo-v"></i></a></li>
+      </ul>
+    </div>
+    <!-- Categories widget -->
+    <div class="mb-5 text-center"><a class="category reset-anchor bg-cover bg-center mb-2" href="#" style="background: url(img/category-1.jpg)">
+        <p class="category-title text-uppercase small">Lifestyle</p></a><a class="category reset-anchor bg-cover bg-center mb-2" href="#" style="background: url(img/category-2.jpg)">
+        <p class="category-title text-uppercase small">Travel</p></a><a class="category reset-anchor bg-cover bg-center" href="#" style="background: url(img/category-3.jpg)">
+        <p class="category-title text-uppercase small">Vacation</p></a></div>
+
+    <div class="mb-5">
+      <h3 class="h5">Latest posts</h3>
+      <p class="text-small text-muted mb-4">Lorem ipsum dolor sit, consectetur adipisicing elit, sed do eiusmod.</p>
+      <ul class="list-unstyled">
+        <li class="media mb-1"><a href="post.html"><img src="/static/img/recent-posts-thumb-1.jpg" alt="" width="80"></a>
+          <div class="media-body ml-3">
+            <p class="small text-primary text-uppercase mb-0">5 Aug 2018</p>
+            <h6 class="mb-1"><a class="reset-anchor" href="post.html">The top climbing tours</a></h6>
+            <p class="small text-muted">Lorem ipsum dolor sit, consectetur adipisicing elit, sed.</p>
+          </div>
+        </li>
+        <li class="media mb-1"><a href="post.html"><img src="/static/img/recent-posts-thumb-2.jpg" alt="" width="80"></a>
+          <div class="media-body ml-3">
+            <p class="small text-primary text-uppercase mb-0">5 Aug 2018</p>
+            <h6 class="mb-1"><a class="reset-anchor" href="post.html">Travel guide to Canada</a></h6>
+            <p class="small text-muted">Lorem ipsum dolor sit, consectetur adipisicing elit, sed.</p>
+          </div>
+        </li>
+        <li class="media"><a href="post.html"><img src="/static/img/recent-posts-thumb-3.jpg" alt="" width="80"></a>
+          <div class="media-body ml-3">
+            <p class="small text-primary text-uppercase mb-0">5 Aug 2018</p>
+            <h6 class="mb-1"><a class="reset-anchor" href="post.html">A day in Tailand</a></h6>
+            <p class="small text-muted mb-0">Lorem ipsum dolor sit, consectetur adipisicing elit, sed.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>

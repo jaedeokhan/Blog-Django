@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User 
 
 # Create your models here.
@@ -18,6 +19,9 @@ class Post(models.Model):
 
     def __str__(self):
         return '%s - %s' %(self.id, self.title)
+    
+    def get_absolute_url(self):
+        return reverse('post-detail', args=[str(self.id)])
 
 class Category(models.Model):
     name = models.CharField(max_length=30, help_text="블로그 카테고리") 

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include "include/header_css.html" %}
+    </head>
+    <body>
+      <!-- Header-->
+      {% include "include/header.html" %}
+    <!-- Hero section -->
+    <section class="hero bg-center bg-cover" style="background: url(img/hero-banner.jpg)">
+      <div class="dark-overlay py-5">
+        <div class="overlay-content">
+          <div class="container py-5 text-white text-center">
+            <h1>블로그 리스트</h1>
+            <p>블로그 내용을 확인해주세요</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Blog listing -->
+    <section class="pt-5">
+      <div class="container pt-5">
+        <div class="row mb-5">
+          <div class="col-lg-8">
+            {% if post_list %}
+            <div class="row text-center">
+              {% for post in post_list %}
+              <!-- 게시물에 이미지가 존재하는 경우 -->
+              {% if post.image %}
+              <div class="col-lg-6 mb-5">
+                <a href="post.html">
+                  <img class="img-fluid mb-4" src="{{ post.image.url }}" alt=""/>
+                </a>
+                <ul class="list-inline small text-uppercase mb-0">
+                  <li class="list-inline-item mr-0 text-gray align-middle">By </li>
+                  <li class="list-inline-item align-middle mr-0"><a class="font-weight-bold reset-anchor" href="#">{{ post.user }}</a></li>
+                  <li class="list-inline-item text-gray align-middle mr-0">|</li>
+                  <li class="list-inline-item text-gray align-middle">{{ post.create_date }}</li>
+                </ul>
+                <h3 class="h4 mt-2"> <a class="reset-anchor" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3><a class="reset-anchor text-gray text-uppercase small mb-2 d-block" href="#">Travel guide</a>
+                <p class="text-small mb-1">{{ post.content }}</p><a class="btn btn-link" href="{{ post.get_absolute_url }}">Continue reading</a>
+              </div>
+                <!-- 이미지가 존재하지 않는 경우 -> 디폴트 사진 -->
+                {% else  %}
+                <div class="col-lg-6 mb-5">
+                <a href="post.html">
+                  <img class="img-fluid mb-4" src="/static/img/listing-tnumbnail-3.jpg" alt=""/>
+                </a>
+                <ul class="list-inline small text-uppercase mb-0">
+                  <li class="list-inline-item mr-0 text-gray align-middle">By </li>
+                  <li class="list-inline-item align-middle mr-0"><a class="font-weight-bold reset-anchor" href="#">{{ post.user }}</a></li>
+                  <li class="list-inline-item text-gray align-middle mr-0">|</li>
+                  <li class="list-inline-item text-gray align-middle">{{ post.create_date }}</li>
+                </ul>
+                <h3 class="h4 mt-2"> <a class="reset-anchor" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3><a class="reset-anchor text-gray text-uppercase small mb-2 d-block" href="#">Travel guide</a>
+                <p class="text-small mb-1">{{ post.content }}</p><a class="btn btn-link" href="{{ post.get_absolute_url }}">Continue reading</a>
+              </div>
+              {% endif %}
+            {% endfor %}  
+            </div>
+            {% else %}
+            <h2>데이터가 없습니다.</h2>
+            {% endif %}
+            <!-- Listing navigation -->
+            <div class="p-4 bg-light mb-5">
+              <div class="row">
+                <!-- <div class="col-sm-6 text-center text-sm-left mb-2 mb-sm-0"><a class="btn btn-outline-secondary btn-sm" href="#"><i class="fas fa-angle-left mr-2"></i>Prev posts</a></div>
+                <div class="col-sm-6 text-center text-sm-right text-right"><a class="btn btn-outline-secondary btn-sm" href="#">Next posts<i class="fas fa-angle-right ml-2"></i></a></div> -->
+                <div class="col-sm-12 text-center">
+                  <nav>
+                  {% if is_paginated %}
+                  <ul class="pagination justify-content-center">
+                      {% if page_obj.has_previous %}                         
+                      <li class="page-item">
+                        <a class="page-link" href="{{ request.path }}?page={{ page_obj.previous_page_number }}">Prev</a>
+                      </li>
+                      {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link" href="#">Prev</a>
+                      </li>
+                      {% endif %}
+                      <li class="page-item">
+                          <a class="page-link" href="#">{{page_obj.number}}/{{page_obj.paginator.num_pages}}</a>
+                      </li>
+                      {% if page_obj.has_next %}
+                      <li class="page-item">
+                          <a class="page-link" href="{{ request.path }}?page={{ page_obj.next_page_number }}">Next</a>
+                      </li>
+                      {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link" href="#">Next</a>
+                      </li>
+                      {% endif %}
+                  </ul>
+                 {% endif %}
+                 </nav>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- Sidebar -->
+          {% include "include/post_side_bar.html" %}
+
+        </div>
+      </div>
+    </section>
+    {% include "include/footer.html" %}
+    <!-- JavaScript files-->
+    {% include "include/footer_css.html" %}
+  </body>
+</html>
