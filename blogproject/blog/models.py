@@ -17,6 +17,9 @@ class Post(models.Model):
     create_date = models.DateField(auto_now_add=True, help_text="블로그 게시물 생성일")
     update_date = models.DateField(auto_now=True, help_text="블로그 게시물 수정일")
 
+    class Meta:
+        ordering = ['-create_date']
+
     def __str__(self):
         return '%s - %s' %(self.id, self.title)
     
