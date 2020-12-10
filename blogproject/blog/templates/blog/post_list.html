@@ -28,7 +28,7 @@
               <!-- 게시물에 이미지가 존재하는 경우 -->
               {% if post.image %}
               <div class="col-lg-6 mb-5">
-                <a href="post.html">
+                <a href="{{ post.get_absolute_url }}">
                   <img class="img-fluid mb-4" src="{{ post.image.url }}" alt=""/>
                 </a>
                 <ul class="list-inline small text-uppercase mb-0">
@@ -43,7 +43,7 @@
                 <!-- 이미지가 존재하지 않는 경우 -> 디폴트 사진 -->
                 {% else  %}
                 <div class="col-lg-6 mb-5">
-                <a href="post.html">
+                <a href="{{ post.get_absolute_url }}">
                   <img class="img-fluid mb-4" src="/static/img/listing-tnumbnail-3.jpg" alt=""/>
                 </a>
                 <ul class="list-inline small text-uppercase mb-0">
