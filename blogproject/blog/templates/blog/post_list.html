@@ -31,13 +31,26 @@
                 <a href="{{ post.get_absolute_url }}">
                   <img class="img-fluid mb-4" src="{{ post.image.url }}" alt=""/>
                 </a>
-                <ul class="list-inline small text-uppercase mb-0">
+                <ul class="list-inline mb-0">
                   <li class="list-inline-item mr-0 text-gray align-middle">By </li>
                   <li class="list-inline-item align-middle mr-0"><a class="font-weight-bold reset-anchor" href="#">{{ post.user }}</a></li>
                   <li class="list-inline-item text-gray align-middle mr-0">|</li>
                   <li class="list-inline-item text-gray align-middle">{{ post.create_date }}</li>
                 </ul>
-                <h3 class="h4 mt-2"> <a class="reset-anchor" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3><a class="reset-anchor text-gray text-uppercase small mb-2 d-block" href="#">Travel guide</a>
+                <ul class="list-inline mb-0">   
+                  <li class="list-inline-item align-middle mr-0"><a class="font-weight-bold reset-anchor"><i class="fas fa-eye" style="color:#4c6ef5;"></i><span>조회수 : <span class="badge">{{ post.view_count }}</span></span></a></li>
+                  <li class="list-inline-item align-middle mr-0">
+                    <a class="font-weight-bold reset-anchor">
+                      {% if user in post.likes_user.all %}
+                      <i class="fas fa-heart alreday" style="color: #c4302b;"></i>
+                      {% else %}
+                      <i class="far fa-heart alreday" style="color: #c4302b;"></i>
+                      {% endif %}
+                      <span id="count-{{ post.id }}">추천수 : <span class="badge">{{ post.likes_user.all.count }}</span></span>
+                    </a>
+                  </li>
+                </ul>                
+                <h3 class="h4 mt-2"> <a class="reset-anchor" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3><a class="reset-anchor text-gray text-uppercase small mb-2 d-block" href="#"><span class="badge">{{ post.category }}</span></a>
                 <p class="text-small mb-1">{{ post.content }}</p><a class="btn btn-link" href="{{ post.get_absolute_url }}">Continue reading</a>
               </div>
                 <!-- 이미지가 존재하지 않는 경우 -> 디폴트 사진 -->
@@ -46,13 +59,25 @@
                 <a href="{{ post.get_absolute_url }}">
                   <img class="img-fluid mb-4" src="/static/img/listing-tnumbnail-3.jpg" alt=""/>
                 </a>
-                <ul class="list-inline small text-uppercase mb-0">
+                <ul class="list-inline mb-0">
                   <li class="list-inline-item mr-0 text-gray align-middle">By </li>
                   <li class="list-inline-item align-middle mr-0"><a class="font-weight-bold reset-anchor" href="#">{{ post.user }}</a></li>
                   <li class="list-inline-item text-gray align-middle mr-0">|</li>
-                  <li class="list-inline-item text-gray align-middle">{{ post.create_date }}</li>
+                  <li class="list-inline-item text-gray align-middle">{{ post.create_date }}</li>                </ul>
+                <ul class="list-inline mb-0">   
+                  <li class="list-inline-item align-middle mr-0"><a class="font-weight-bold reset-anchor"><i class="fas fa-eye" style="color:#4c6ef5;"></i><span>조회수 : <span class="badge">{{ post.view_count }}</span></span></a></li>
+                  <li class="list-inline-item align-middle mr-0">
+                    <a class="font-weight-bold reset-anchor">
+                      {% if user in post.likes_user.all %}
+                      <i class="fas fa-heart alreday" style="color: #c4302b;"></i>
+                      {% else %}
+                      <i class="far fa-heart alreday" style="color: #c4302b;"></i>
+                      {% endif %}
+                      <span id="count-{{ post.id }}">추천수 : <span class="badge">{{ post.likes_user.all.count }}</span></span>
+                    </a>
+                  </li>
                 </ul>
-                <h3 class="h4 mt-2"> <a class="reset-anchor" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3><a class="reset-anchor text-gray text-uppercase small mb-2 d-block" href="#">Travel guide</a>
+                <h3 class="h4 mt-2"> <a class="reset-anchor" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3><a class="reset-anchor text-gray text-uppercase small mb-2 d-block" href="#"><span class="badge">{{ post.category }}</span></a>
                 <p class="text-small mb-1">{{ post.content }}</p><a class="btn btn-link" href="{{ post.get_absolute_url }}">Continue reading</a>
               </div>
               {% endif %}

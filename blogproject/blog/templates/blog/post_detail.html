@@ -8,23 +8,36 @@
       {% include "include/header.html" %}
     <section class="py-5">
       <!-- 게시물 상세정보 -->
+      <!-- 조회수 증가 -->
       <div class="container text-center">
         <p class="h6 mb-0 text-uppercase text-primary">{{ post.category }}</p>
         <h1>{{ post.title }}</h1>
-        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis aliquid</p>
-        <ul class="list-inline small text-uppercase mb-0">
-          <li class="list-inline-item align-middle"><img class="rounded-circle shadow-sm" src="/static/img/person-1.jpg" alt="" width="40"/></li>
+        <p style="display: none;">{{ post.update_view_count }}</p>
+        <span><i class="fas fa-eye" style="color:#4c6ef5;"></i>조회수 : <span class="badge">{{ post.view_count }}</span></span>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#" class="like" name="{{ post.id }}" value="Like" >
+          {% if user in post.likes_user.all %}
+          <i class="fas fa-heart alreday" style="color: #c4302b;"></i>
+          {% else %}
+          <i class="far fa-heart alreday" style="color: #c4302b;"></i>
+          {% endif %}
+        </a>
+        <span id="count-{{ post.id }}">추천수 : <span class="badge">{{ post.likes_user.all.count }}</span></span>
+        <ul class="list-inline  mb-0">
           <li class="list-inline-item mr-0 text-muted align-middle">By </li>
-          <li class="list-inline-item align-middle mr-0"><a class="font-weight-bold reset-anchor" href="#">Jason Doe</a></li>
+          <li class="list-inline-item align-middle mr-0"><a class="font-weight-bold reset-anchor" href="#">{{ post.user }}</a></li>
           <li class="list-inline-item text-muted align-middle mr-0">|</li>
           <li class="list-inline-item text-muted align-middle mr-0">{{ post.create_date }}</li>
           <li class="list-inline-item text-muted align-middle mr-0">|</li>
-          <li class="list-inline-item text-muted align-middle">20 Comments</li>
         </ul>
       </div>
       <div class="text-right">
-        <a href="{% url 'post-update' post.id %}" class="btn btn-primary">수정</a>
-        <a href="{% url 'post-delete' post.id %} " class="btn btn-danger">삭제</a>
+        {% if user.is_authenticated  %}
+          {% if user == post.user %}   
+            <a href="{% url 'post-update' post.id %}" class="btn btn-primary">수정</a>
+            <a href="{% url 'post-delete' post.id %} " class="btn btn-danger">삭제</a>
+          {% endif %}
+        {% endif %}
       </div>
       <img class="w-100 py-5" src="/static/img/post-banner.jpg" alt="">
       <div class="container">
@@ -125,5 +138,33 @@
     {% include "include/footer.html" %}
     <!-- JavaScript files-->
     {% include "include/footer_css.html" %}
+    <script>
+      $(".like").click(function(){
+        var pk = $(this).attr('name')
+        $.ajax({
+          type: 'POST',
+          url: "{% url 'post_like' %}",
+          data: {'pk': pk,'csrfmiddlewaretoken': '{{ csrf_token }}' },
+          dataType: "json",
+          success: function (response) {
+            alert(response.message);
+            $("#count-" + pk).html("추천수 : <span class='badge'>" + response.likes_count + "</span>");
+            var like = $(".like i");
+            if(response.is_liked){ // 이미 추천 o
+              like.removeClass();
+              like.addClass("far fa-heart alreday");
+            } else { // 추천 x
+              like.removeClass();
+              like.addClass("fas fa-heart alreday");
+            }
+          },
+          error: function (request, status, error){
+            alert("로그인을 하고 이용해주세요.")
+            window.location.replace("/accounts/login/")
+          }
+        })
+
+      });
+    </script>
   </body>
 </html>

@@ -42,8 +42,14 @@
                             {{ field }}
                           </div>
                           {% endfor %}
+                          <!-- {% if user.is_authenticated  %}
+                          <input type="text" name="user" id="id_user" value="{{ user.get_username }}"  readonly/>
+                          {% endif %} -->
                           <input type="button" onclick="createCheck()" class="btn btn-primary" value="작성하기"/>
                         </fieldset>
+                        <!-- {% if user.is_authenticated  %}
+                          <input type="hidden" id="id_user" name="user" value="{{ user.get_username }}" />
+                        {% endif %} -->
                       </form>
                     </div>
                 </div>   
