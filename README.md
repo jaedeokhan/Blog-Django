@@ -1,5 +1,9 @@
 # Python Django 간단한 Blog 프로젝트
 
+## pythonanywhere 배포 => [사이트 바로가기](http://hjaedeok.pythonanywhere.com/)
+![blog](https://user-images.githubusercontent.com/45028904/104085830-bb3eec80-5295-11eb-8744-76f9d81c59cd.PNG)
+
+
 ## 개발 환경 => [requirements.txt](https://github.com/jaedeokhan/Blog-Django/blob/main/requirements.txt)
 
 * Python Version 3.8
@@ -8,6 +12,8 @@
 * Pillow Version 8.0.1 
    * Pillow는 Django models.py에서 imageField를 사용하기 위해서 설치해야한다.
    * pip install pillow Or python -m pip install pillow
+   
+   
 
 ## 기능 구성
 #### 블로그의 생성, 수정, 삭제, 리스트, 상세정보 모두 django에서 제공하는 gerenic View를 사용했습니다. 
