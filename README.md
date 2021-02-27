@@ -22,7 +22,7 @@
 #### 추천수는 ajax를 통해서 페이지 전부를 로드시키지 않고, 일부 기능만 통신을 해서 구현했습니다.
 
 ### 1. 로그인
-![login](https://user-images.githubusercontent.com/45028904/109370104-41fd6680-78e2-11eb-9b2e-292c5295f495.gif)
+![blog-login](https://user-images.githubusercontent.com/45028904/109370173-91dc2d80-78e2-11eb-8b46-63946fdaf1b6.gif)
 
 ### 2. 
 
