@@ -31,8 +31,19 @@
 ### 3. 블로그 게시물 리스트
 ![blog-list](https://user-images.githubusercontent.com/45028904/109372169-7c1f3600-78eb-11eb-99e5-1e9f2fbf2a34.gif)
 
+### 4. 블로그 게시물 등록
+![blog-regist](https://user-images.githubusercontent.com/45028904/109372264-fb146e80-78eb-11eb-9229-7652a16fdf4e.gif)
+
+### 5. 블로그 게시물 상세보기
 
 
+### 6. 블로그 게시물 수정
+
+### 7. 블로그 게시물 삭제
+
+### 8. 블로그 게시물 조회수 
+
+### 9. 블로그 게시물 추천수
 
 1. 블로그 게시물 등록, 수정, 삭제, 리스트, 상세정보기능(CreateView, UpdateView, DeleteView, ListView, DetailView)
 2. 블로그 조회수 기능(view_count)
