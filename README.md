@@ -25,7 +25,14 @@
 ![blog-login](https://user-images.githubusercontent.com/45028904/109371697-6741a300-78e9-11eb-8e39-c63a96f65ed3.gif)
 
 
-### 2. 
+### 2. 로그아웃
+![blog-logout](https://user-images.githubusercontent.com/45028904/109371904-5b0a1580-78ea-11eb-9494-1bd61470c0c8.gif)
+
+### 3. 블로그 게시물 리스트
+![blog-list](https://user-images.githubusercontent.com/45028904/109372169-7c1f3600-78eb-11eb-99e5-1e9f2fbf2a34.gif)
+
+
+
 
 1. 블로그 게시물 등록, 수정, 삭제, 리스트, 상세정보기능(CreateView, UpdateView, DeleteView, ListView, DetailView)
 2. 블로그 조회수 기능(view_count)
