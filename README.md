@@ -1,25 +1,38 @@
-# Python Django 간단한 Blog 프로젝트
+# Django Blog 프로젝트
+> Python의 프레임워크인 Django를 이용한 개인 블로그 팀 프로젝트입니다.
+> 
+> 배포는 pythonanywhere를 통해 배포했습니다 => [사이트 바로가기](http://hjaedeok.pythonanywhere.com/)
 
-## pythonanywhere 배포 => [사이트 바로가기](http://hjaedeok.pythonanywhere.com/)
-![blog](https://user-images.githubusercontent.com/45028904/104085830-bb3eec80-5295-11eb-8744-76f9d81c59cd.PNG)
+## 바로가기
+1. [제작 기간 & 참여 인원](https://github.com/jaedeokhan/python-django-blog/blob/main/README.md#1-%EC%A0%9C%EC%9E%91-%EA%B8%B0%EA%B0%84--%EC%B0%B8%EC%97%AC-%EC%9D%B8%EC%9B%90)
+2. [사용 기술](https://github.com/jaedeokhan/python-django-blog/blob/main/README.md#2-%EC%82%AC%EC%9A%A9-%EA%B8%B0%EC%88%A0)
+3. [ERD 설계](https://github.com/jaedeokhan/python-django-blog/blob/main/README.md#3-erd-%EC%84%A4%EA%B3%84)
+4. [기능](https://github.com/jaedeokhan/python-django-blog/blob/main/README.md#4-%EA%B8%B0%EB%8A%A5)
 
+## 1. 제작 기간 & 참여 인원
+* 기간 : 2020.10.13 ~ 2020.12.25
+* 팀원 : 한재덕, 안효재, 황동민
 
-## 개발 환경 => [requirements.txt](https://github.com/jaedeokhan/Blog-Django/blob/main/requirements.txt)
-
-* Python Version 3.8
-* Django Version 3.1.2
-   * pip install Django
+## 2. 사용 기술
+> [requirements.txt](https://github.com/jaedeokhan/Blog-Django/blob/main/requirements.txt)
+* Python 3.8
+* Django 3.1.2
 * Pillow Version 8.0.1 
    * Pillow는 Django models.py에서 imageField를 사용하기 위해서 설치해야한다.
    * pip install pillow Or python -m pip install pillow
-   
-   
+* Html, Css, JQuery
+* Bootstrap
 
-## 기능 구성
-#### 로그인, 로그아웃은 admin.py에서 제공하는 accounts/login, accounts/logout을 사용했습니다.
-#### 블로그의 생성, 수정, 삭제, 리스트, 상세정보 모두 django에서 제공하는 gerenic View를 사용했습니다. 
-#### 조회수는 models.py에 29행에 @property를 이용해서 구현했습니다. 
-#### 추천수는 ajax를 통해서 페이지 전부를 로드시키지 않고, 일부 기능만 통신을 해서 구현했습니다.
+## 3. ERD 설계
+> [models.py](https://github.com/jaedeokhan/python-django-blog/blob/main/blogproject/blog/models.py)
+
+![models.py](https://user-images.githubusercontent.com/45028904/110242892-65d44280-7f9b-11eb-8a10-81090a685a21.png)
+
+## 4. 기능
+1. 블로그 게시물 등록, 수정, 삭제, 리스트, 상세정보기능(CreateView, UpdateView, DeleteView, ListView, DetailView)
+2. 블로그 조회수 기능(view_count)
+3. 블로그 추천수 기능(likes_user)
+4. 로그인, 로그아웃 기능(accounts/login, accounts/logout)
 
 ### 1. 로그인
 ![blog-login](https://user-images.githubusercontent.com/45028904/109371697-6741a300-78e9-11eb-8e39-c63a96f65ed3.gif)
@@ -45,8 +58,4 @@
 
 ### 9. 블로그 게시물 추천수
 
-1. 블로그 게시물 등록, 수정, 삭제, 리스트, 상세정보기능(CreateView, UpdateView, DeleteView, ListView, DetailView)
-2. 블로그 조회수 기능(view_count)
-3. 블로그 추천수 기능(likes_user)
-4. 로그인, 로그아웃 기능(accounts/login, accounts/logout)
 
