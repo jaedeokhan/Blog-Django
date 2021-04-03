@@ -1,8 +1,7 @@
 # Django Blog 프로젝트
 > Python의 프레임워크인 Django를 이용한 개인 블로그 팀 프로젝트입니다.
 > 
-> 배포는 pythonanywhere를 통해 배포했습니다 => [사이트 바로가기](http://hjaedeok.pythonanywhere.com/)
-
+> 배포는 pythonanywhere를 통해 배포했습니다 => <a href="http://hjaedeok.pythonanywhere.com/" target="_blank">사이트 바로가기</a> 
 ## 바로가기
 1. [제작 기간 & 참여 인원](https://github.com/jaedeokhan/python-django-blog/blob/main/README.md#1-%EC%A0%9C%EC%9E%91-%EA%B8%B0%EA%B0%84--%EC%B0%B8%EC%97%AC-%EC%9D%B8%EC%9B%90)
 2. [사용 기술](https://github.com/jaedeokhan/python-django-blog/blob/main/README.md#2-%EC%82%AC%EC%9A%A9-%EA%B8%B0%EC%88%A0)
